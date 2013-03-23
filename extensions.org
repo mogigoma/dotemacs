@@ -98,7 +98,6 @@
             dired+
             el-get
             erc
-            expand-region
             flymake-point
             gist
             helm
