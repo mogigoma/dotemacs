@@ -5,87 +5,87 @@
 ** Confirmation
 
    Requiring users to type the full word is a crime.
-  
-   #+begin_src emacs-lisp
+
+   #+BEGIN_SRC emacs-lisp
    (fset 'yes-or-no-p 'y-or-n-p)
-   #+end_src
+   #+END_SRC
 
 ** Encoding
 
    There is but one, true encoding for text.
 
-   #+begin_src emacs-lisp
+   #+BEGIN_SRC emacs-lisp
    (prefer-coding-system 'utf-8)
    (set-default-coding-systems 'utf-8)
    (set-terminal-coding-system 'utf-8)
    (set-keyboard-coding-system 'utf-8)
-   #+end_src
+   #+END_SRC
 
 ** Scrolling
 
    The way Emacs jumps by default when scrolling is mind-bending.
 
-   #+begin_src emacs-lisp
+   #+BEGIN_SRC emacs-lisp
    (setq scroll-step 1)
-   #+end_src
+   #+END_SRC
 
 ** Startup
 
    After the first time, the splash screen is annoying.
 
-   #+begin_src emacs-lisp
+   #+BEGIN_SRC emacs-lisp
    (setq inhibit-startup-screen t
    	 inhibit-startup-message t
    	 inhibit-startup-echo-area-message user-login-name)
-   #+end_src
+   #+END_SRC
 
    Similarly, you learn what the scratch buffer is for quite early.
 
-   #+begin_src emacs-lisp
+   #+BEGIN_SRC emacs-lisp
    (setq initial-scratch-message nil)
-   #+end_src
+   #+END_SRC
 
 ** Wrapping
 
    An 80-character wrap is traditional.
 
-   #+begin_src emacs-lisp
+   #+BEGIN_SRC emacs-lisp
    (setq fill-column 80)
-   #+end_src
+   #+END_SRC
 
 ** Cursor
 
    Motion grabs the user's attention, and should be used sparingly.
 
-   #+begin_src emacs-lisp
+   #+BEGIN_SRC emacs-lisp
    (blink-cursor-mode -1)
-   #+end_src
+   #+END_SRC
 
 ** GUI
 
    The graphical mode of Emacs is for colour, graphics, and font support, /not/ mouse use.
 
-   #+begin_src emacs-lisp
+   #+BEGIN_SRC emacs-lisp
    (menu-bar-mode -1)
    (tool-bar-mode -1)
    (scroll-bar-mode -1)
-   #+end_src
+   #+END_SRC
 
 ** Buffer Name Collisions
 
    Numeric suffixes are uninformative.
 
-   #+begin_src emacs-lisp
+   #+BEGIN_SRC emacs-lisp
    (require 'uniquify)
    (setq uniquify-buffer-name-style 'post-forward
          uniquify-separator "|")
-   #+end_src
+   #+END_SRC
 
 ** Whitespace
 
    Some whitespace is more important than others.
 
-   #+begin_src emacs-lisp
+   #+BEGIN_SRC emacs-lisp
    (setq-default show-trailing-whitespace t)
    (setq-default indicate-empty-lines t)
-   #+end_src
+   #+END_SRC

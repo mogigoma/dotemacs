@@ -6,57 +6,57 @@
 
    Initialize the list of repositories we subscribe to.
 
-   #+begin_src emacs-lisp
+   #+BEGIN_SRC emacs-lisp
    (setq package-archives '())
-   #+end_src
+   #+END_SRC
 
 *** GNU
 
    The Free Software Foundation's official Emacs repository.
 
-   #+begin_src emacs-lisp
+   #+BEGIN_SRC emacs-lisp
    (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
-   #+end_src
+   #+END_SRC
 
 *** ELPA
 
    The original Emacs repository.
 
-   #+begin_src emacs-lisp
+   #+BEGIN_SRC emacs-lisp
    (add-to-list 'package-archives '("elpa" . "http://tromey.com/elpa/"))
    (setq package-archives (append package-archives '(
      ())))
-   #+end_src
+   #+END_SRC
 
 *** MELPA
 
    This repository contains less-stable user-contributed extensions, so we put it before Marmalade so the latter takes precedence.
 
-   #+begin_src emacs-lisp
+   #+BEGIN_SRC emacs-lisp
    (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
-   #+end_src
+   #+END_SRC
 
 *** Marmalade
 
    This repository contains stable user-contributed extensions.
 
-   #+begin_src emacs-lisp
+   #+BEGIN_SRC emacs-lisp
    (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
-   #+end_src
+   #+END_SRC
 
 *** Org-mode
 
    This repository is dedicated to Org-mode.
 
-   #+begin_src emacs-lisp
+   #+BEGIN_SRC emacs-lisp
    (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
-   #+end_src
+   #+END_SRC
 
 ** Bootstrap
 
    Install or initialize el-get, a great package manager.
 
-   #+begin_src emacs-lisp
+   #+BEGIN_SRC emacs-lisp
    (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
    (unless (require 'el-get nil t)
      (with-current-buffer
@@ -64,13 +64,13 @@
        (let (el-get-master-branch el-get-install-skip-emacswiki-recipes)
          (end-of-buffer)
          (eval-print-last-sexp))))
-   #+end_src
+   #+END_SRC
 
 ** Packages
 
    These are the packages that we'd like to have installed, with some configuration specified.
 
-   #+begin_src emacs-lisp
+   #+BEGIN_SRC emacs-lisp
      (setq el-get-sources
            '((:name ace-jump-mode)
              (:name browse-kill-ring
@@ -87,11 +87,11 @@
               :after (progn
                       (require 'undo-tree)
                       (global-set-key (kbd "C-M-z") 'undo-tree-visualize)))))
-   #+end_src
+   #+END_SRC
 
    Combine implicitly and explicitly sourced packages.
 
-   #+begin_src emacs-lisp
+   #+BEGIN_SRC emacs-lisp
    (setq mak/packages
          (append
           '(color-theme-solarized
@@ -108,20 +108,20 @@
             twittering-mode
             yasnippet)
           (mapcar 'el-get-source-name el-get-sources)))
-   #+end_src
+   #+END_SRC
 
 ** Garbage Collection
 
    Ensure that no packages are installed that we no longer want.
 
-   #+begin_src emacs-lisp
+   #+BEGIN_SRC emacs-lisp
    (el-get-cleanup mak/packages)
-   #+end_src
+   #+END_SRC
 
 ** Install or Update
 
    Download the newest version of the packages we subscribe to, and initialize them.
 
-   #+begin_src emacs-lisp
+   #+BEGIN_SRC emacs-lisp
    (el-get 'sync mak/packages)
-   #+end_src
+   #+END_SRC
