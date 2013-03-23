@@ -80,6 +80,11 @@
             :after (load-theme 'solarized-dark t))
            (:name expand-region
             :after (global-set-key (kbd "S-SPC") 'er/expand-region))
+           (:name helm
+            :after (progn
+                    (global-set-key (kbd "M-x") 'helm-M-x)
+                    (global-set-key (kbd "C-x b") 'helm-buffers-list)
+                    (global-set-key (kbd "C-x f") 'helm-find-files)))
            (:name magit
             :type elpa
             :after (global-set-key (kbd "C-M-v") 'magit-status))
@@ -100,7 +105,6 @@
             erc
             flymake-point
             gist
-            helm
             markdown-mode
             paredit
             twittering-mode
