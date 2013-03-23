@@ -76,6 +76,8 @@
             :after (key-chord-define-global "uh" 'ace-jump-mode))
            (:name browse-kill-ring
             :after (global-set-key (kbd "C-M-y") 'browse-kill-ring))
+           (:name color-theme-solarized
+            :after (load-theme 'solarized-dark t))
            (:name expand-region
             :after (global-set-key (kbd "S-SPC") 'er/expand-region))
            (:name magit
@@ -92,8 +94,7 @@
    #+BEGIN_SRC emacs-lisp
    (setq mak/packages
          (append
-          '(color-theme-solarized
-            command-frequency
+          '(command-frequency
             dired+
             el-get
             erc
