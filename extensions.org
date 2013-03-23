@@ -78,6 +78,9 @@
             :after (global-set-key (kbd "C-M-y") 'browse-kill-ring))
            (:name expand-region
             :after (global-set-key (kbd "S-SPC") 'er/expand-region))
+           (:name magit
+            :type elpa
+            :after (global-set-key (kbd "C-M-v") 'magit-status))
            (:name undo-tree
             :after (progn
                     (require 'undo-tree)
