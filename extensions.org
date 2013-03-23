@@ -79,9 +79,8 @@
               :after (progn
                       (key-chord-mode 1)
                       (key-chord-define-global "uh" 'ace-jump-mode)))
-             (:name magit)
+             ;;(:name magit)
              (:name undo-tree
-              :type elpa
               :after (progn
                       (require 'undo-tree)
                       (global-set-key (kbd "C-M-z") 'undo-tree-visualize)))))
