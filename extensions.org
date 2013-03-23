@@ -69,21 +69,19 @@
    These are the packages that we'd like to have installed, with some configuration specified.
 
    #+BEGIN_SRC emacs-lisp
-     (setq el-get-sources
-           '((:name ace-jump-mode)
-             (:name browse-kill-ring
-              :after (global-set-key (kbd "C-M-y") 'browse-kill-ring))
-             (:name expand-region
-              :after (global-set-key (kbd "S-SPC") 'er/expand-region))
-             (:name key-chord
-              :after (progn
-                      (key-chord-mode 1)
-                      (key-chord-define-global "uh" 'ace-jump-mode)))
-             ;;(:name magit)
-             (:name undo-tree
-              :after (progn
-                      (require 'undo-tree)
-                      (global-set-key (kbd "C-M-z") 'undo-tree-visualize)))))
+   (setq el-get-sources
+         '((:name key-chord
+            :after (key-chord-mode 1))
+           (:name ace-jump-mode
+            :after (key-chord-define-global "uh" 'ace-jump-mode))
+           (:name browse-kill-ring
+            :after (global-set-key (kbd "C-M-y") 'browse-kill-ring))
+           (:name expand-region
+            :after (global-set-key (kbd "S-SPC") 'er/expand-region))
+           (:name undo-tree
+            :after (progn
+                    (require 'undo-tree)
+                    (global-set-key (kbd "C-M-z") 'undo-tree-visualize)))))
    #+END_SRC
 
    Combine implicitly and explicitly sourced packages.
