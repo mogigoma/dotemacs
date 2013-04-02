@@ -89,3 +89,15 @@
    (setq-default show-trailing-whitespace t)
    (setq-default indicate-empty-lines t)
    #+END_SRC
+
+** Context
+
+   It's important for Emacs to display information about the point.
+
+   #+BEGIN_SRC emacs-lisp
+   (global-hl-line-mode 1)
+   (column-number-mode 1)
+
+   (setq show-paren-style 'parenthesis)
+   (show-paren-mode 1)
+   #+END_SRC
