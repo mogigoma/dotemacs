@@ -77,7 +77,7 @@
            (:name browse-kill-ring
             :after (global-set-key (kbd "C-M-y") 'browse-kill-ring))
            (:name color-theme-solarized
-            :after (load-theme 'solarized-dark t))
+            :after (when (display-graphic-p) (load-theme 'solarized-dark t)))
            (:name expand-region
             :after (global-set-key (kbd "S-SPC") 'er/expand-region))
            (:name helm
