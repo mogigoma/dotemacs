@@ -1,0 +1,11 @@
+* Programming
+
+  What else would you ever use Emacs for? :-P
+
+** C / C++
+
+   #+BEGIN_SRC emacs-lisp
+   (add-hook 'c-mode-common-hook
+   	     (lambda ()
+      	       (c-set-style "bsd")))
+   #+END_SRC
