@@ -42,14 +42,6 @@
    (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
    #+END_SRC
 
-*** Org-mode
-
-   This repository is dedicated to Org-mode.
-
-   #+BEGIN_SRC emacs-lisp
-   (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
-   #+END_SRC
-
 ** Bootstrap
 
    Install or initialize el-get, a great package manager.
