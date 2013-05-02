@@ -66,9 +66,10 @@
    The graphical mode of Emacs is for colour, graphics, and font support, /not/ mouse use.
 
    #+BEGIN_SRC emacs-lisp
-   (menu-bar-mode -1)
-   (tool-bar-mode -1)
-   (scroll-bar-mode -1)
+   (when (display-graphic-p)
+     (menu-bar-mode -1)
+     (tool-bar-mode -1)
+     (scroll-bar-mode -1))
    #+END_SRC
 
 ** Buffer Name Collisions
