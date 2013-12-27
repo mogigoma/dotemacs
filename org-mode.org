@@ -1,0 +1,57 @@
+* Org-Mode
+
+** Global Settings
+
+   #+BEGIN_SRC emacs-lisp
+   (setq org-directory "~/org")
+   #+END_SRC
+
+** Agenda
+
+   #+BEGIN_SRC emacs-lisp
+   (global-set-key (kbd "C-c o a") 'org-agenda)
+   #+END_SRC
+
+   #+BEGIN_SRC emacs-lisp
+   (setq org-agenda-files '("~/org"))
+   #+END_SRC
+
+   #+BEGIN_SRC emacs-lisp
+   (setq org-log-done t)
+   #+END_SRC
+
+** Capture
+
+   #+BEGIN_SRC emacs-lisp
+   (global-set-key (kbd "C-c o c") 'org-capture)
+   #+END_SRC
+
+** Publish
+
+*** MobileOrg
+
+   #+BEGIN_SRC emacs-lisp
+   ;; (setq org-mobile-use-encryption t)
+   ;; (setq org-mobile-encryption-password "hunter2")
+   #+END_SRC
+
+   #+BEGIN_SRC emacs-lisp
+   (setq org-mobile-directory "/mobileorg:org/")
+   (setq org-mobile-force-id-on-agenda-items nil)
+   (setq org-mobile-files
+         '("~/org/appointments.org"
+           "~/org/bsideswpg.org"
+           "~/org/brisbane.org"
+           "~/org/family.org"
+           "~/org/fitness.org"
+           "~/org/home.org"
+           "~/org/nessus.org"
+           "~/org/nmap.org"
+           "~/org/pedant.org"
+           "~/org/skullspace.org"
+           "~/org/tmux.org"
+           "~/org/university.org"
+           "~/org/work.org"
+           "~/org/zeerust.org"
+           "~/org/znc.org"))
+   #+END_SRC
