@@ -102,3 +102,10 @@
    (setq show-paren-style 'parenthesis)
    (show-paren-mode 1)
    #+END_SRC
+
+** YOLO
+
+   #+BEGIN_SRC emacs-lisp
+   (setq backup-inhibited t)
+   (setq auto-save-default nil)
+   #+END_SRC
