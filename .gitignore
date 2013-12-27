@@ -1,6 +1,9 @@
 # Ignore everything by default.
 /*
 
+# To be extra sure, ignore everything that's private.
+/private
+
 # Include this file.
 !/.gitignore
 
